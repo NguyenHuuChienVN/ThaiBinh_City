@@ -1,9 +1,9 @@
-import HeroBanner from "../components/home/HeroBanner";
-import IntroSection from "../components/home/IntroSection";
-import PlacesSection from "../components/home/PlacesSection";
-import FoodSection from "../components/home/FoodSection";
-import FestivalSection from "../components/home/FestivalSection";
-import GalleryExperienceSection from "../components/home/GalleryExperienceSection";
+import HeroBanner from "../components/Home/HeroBanner";
+import IntroSection from "../components/Home/IntroSection";
+import PlacesSection from "../components/Home/PlacesSection";
+import FoodSection from "../components/Home/FoodSection";
+import FestivalSection from "../components/Home/FestivalSection";
+import GalleryExperienceSection from "../components/Home/GalleryExperienceSection";
 
 export default function Home() {
   return (
