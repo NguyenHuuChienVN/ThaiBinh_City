@@ -26,50 +26,50 @@ export default function GalleryExperienceSection() {
     <section id="gallery" className="py-12 sm:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-        {/* Layout 2 cột */}
+        {/* Layout: mobile = cột dọc, desktop = 2 cột ngang */}
         <div className="flex flex-col lg:flex-row gap-10 items-start">
 
           {/* LEFT: Gallery */}
-          <div className="flex-1 min-w-0">
+          <div className="w-full lg:flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-4">
-                <SectionTitle title="GALLERY" icon={<LuImage size={15} />} />
+              <SectionTitle title="THƯ VIỆN ẢNH" icon={<LuImage size={15} />} />
             </div>
 
-            {/* Slider */}
-            <div className="overflow-hidden">
-            <div className="flex gap-4 overflow-x-auto pb-2">
-              {images.map((img, i) => (
-                <div
-                  key={i}
-                  className="flex-shrink-0 w-[140px] sm:w-[160px] lg:w-[180px] h-[100px] rounded-xl overflow-hidden"
-                >
-                  <img
-                    src={img}
-                    className="w-full h-full object-cover hover:scale-105 transition"
-                  />
-                </div>
-              ))}
-            </div>
+            {/* Scroll container - kéo sát mép màn hình mobile */}
+            <div className="overflow-x-auto -mx-4 px-4 lg:mx-0 lg:px-0 pb-2"
+                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              <div className="flex gap-3" style={{ width: 'max-content' }}>
+                {images.map((img, i) => (
+                  <div
+                    key={i}
+                    className="flex-shrink-0 rounded-xl overflow-hidden"
+                    style={{ width: '140px', height: '95px' }}
+                  >
+                    <img
+                      src={img}
+                      alt={`gallery-${i}`}
+                      className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* RIGHT: Video */}
-          <div className="flex-1 min-w-0">
+          <div className="w-full lg:flex-1 min-w-0">
             <SectionTitle title="TRẢI NGHIỆM THÁI BÌNH" icon={<LuLandmark size={15} />} />
 
-            <div className="relative rounded-2xl overflow-hidden">
+            <div className="relative rounded-2xl overflow-hidden mt-4">
               <video
                 src={videoThumb}
-                className="w-full h-[220px] sm:h-[260px] lg:h-[300px] object-cover rounded-2xl "
+                className="w-full object-cover rounded-2xl"
+                style={{ height: '220px' }}
                 controls
               />
-
-              {/* Text */}
-              <div className="absolute top-4 left-4 text-white">
+              <div className="absolute top-4 left-4 text-white drop-shadow">
                 <p className="text-xl">Khám phá Thái Bình</p>
-                <h3 className="font-semibold">
-                  Đất và người nghĩa tình
-                </h3>
+                <h3 className="font-semibold">Đất và người nghĩa tình</h3>
               </div>
             </div>
           </div>
